@@ -1,13 +1,16 @@
 # SOEN-6461
-CONCORDIA UNIVERSITY
-DEPARTMENT OF COMPUTER SCIENCE AND SOFTWARE ENGINEERING
-SOEN 6461: SOFTWARE DESIGN METHODOLOGIES: SECTION SS
-WINTER 2023
-iGo 
+<p style="text-align: center;">CONCORDIA UNIVERSITY</p>
+<p style="text-align: center;">DEPARTMENT OF COMPUTER SCIENCE AND SOFTWARE ENGINEERING</p>
+<p style="text-align: center;">SOEN 6461: SOFTWARE DESIGN METHODOLOGIES: SECTION SS</p>
+<p style="text-align: center;">WINTER 2023 </p>
+<p style="text-align: center;">iGo</p>
+CONCORDIA UNIVERSITY  
+DEPARTMENT OF COMPUTER SCIENCE AND SOFTWARE ENGINEERING  
+SOEN 6461: SOFTWARE DESIGN METHODOLOGIES: SECTION SS  
+WINTER 2023  
+iGo   
 
-Team K
-
-## INTRODUCTION
+# INTRODUCTION
 
 # iGo
 
@@ -25,6 +28,8 @@ It also includes:
 
 ## Team Composition
 
+Team K
+
 | Name  | Student ID | E-mail |
 |-------|------------|--------|
 |Devanshi Piyushkumar Patel | 0000000 | pateldevanshi1108@gmail.com |
@@ -40,9 +45,9 @@ It also includes:
 
 |Name/Problem                        |Research about TVM|Problem 1|Problem 2|Problem 3|Problem 4|Problem 5|Documentation|
 |:----------------------------------:|:----------------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-----------:|
-|Devanshi Piyushkumar Patel          |✔                 |         |        |         |        |        |             |
-|Hetul Patel                         |✔                 |         |        |         |        |        |             |
-|Jay Bharatbhai Patel                |✔                 |         |        |         |        |        |             |
-|Juhi Birju Patel                    |✔                 |         |        |         |        |        |             |
-|Krishna Patel                       |✔                 |         |        |         |        |        |             |
-|Mahavir Patel                       |✔                 |         |        |         |        |        |             |
+|Devanshi Piyushkumar Patel          |✔                 |         |        |         |        |        |✔             |
+|Hetul Patel                         |✔                 |         |        |         |        |        |✔             |
+|Jay Bharatbhai Patel                |✔                 |         |        |         |        |        |✔             |
+|Juhi Birju Patel                    |✔                 |         |        |         |        |        |✔             |
+|Krishna Patel                       |✔                 |         |        |         |        |        |✔             |
+|Mahavir Patel                       |✔                 |         |        |         |        |        |✔             |
