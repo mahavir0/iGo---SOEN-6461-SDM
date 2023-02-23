@@ -8,17 +8,9 @@
 
 # iGo
 
-Requirement analysis for Ticket Vending Machine 
+iGo is a self-service TVM system utilised on public transportation in Canada.
 
-iGo TVM is a self-service system used in public transportation across canada.
-
-Goal: To generate the required artifacts related to the given problem domain.
-
-It also includes:
-  - Generating user story and use case models - UML Diagrams.
-  - Effective Use of collaboration pattern and social software such as github wiki, slack, etc..
-
-
+The objective is to produce the necessary artefacts for the specified problem area.
 
 ## Team Composition
 
