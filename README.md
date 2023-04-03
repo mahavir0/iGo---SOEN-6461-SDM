@@ -42,9 +42,9 @@ Team K
 
 |Name/Problem                        |Research about TVM|Problem 6|Problem 7|Problem 8|Problem 9|Documentation|
 |:----------------------------------:|:----------------:|:-------:|:-------:|:-------:|:-------:|:-----------:|
-|Devanshi Piyushkumar Patel          |✔                 |✔       |        |         |✔        |✔             |
-|Hetul Patel                         |✔                 |         |        |         |✔        |✔             |
-|Jay Bharatbhai Patel                |✔                 |         |✔        |         |        |✔             |
-|Juhi Birju Patel                    |✔                 |         |✔        |         |        |✔             |
-|Krishna Patel                       |✔                 |✔         |        |✔         |        |✔             |
-|Mahavir Patel                       |✔                 |         |        |✔         |        |✔             |
+|Devanshi Piyushkumar Patel          |✔                 |✔       |        |✔        |✔        |✔             |
+|Hetul Patel                         |✔                 |         |✔       |✔        |✔        |✔             |
+|Jay Bharatbhai Patel                |✔                 |✔        |        |✔        |✔       |✔             |
+|Juhi Birju Patel                    |✔                 |✔        |        |✔        |✔       |✔             |
+|Krishna Patel                       |✔                 |         |✔       |✔         |✔       |✔             |
+|Mahavir Patel                       |✔                 |         |✔       |✔         |✔       |✔             |
