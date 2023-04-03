@@ -37,3 +37,14 @@ Team K
 |Juhi Birju Patel                    |✔                 |         |✔        |         |        |✔        |✔             |
 |Krishna Patel                       |✔                 |✔         |        |✔         |        |        |✔             |
 |Mahavir Patel                       |✔                 |         |        |✔         |        |✔        |✔             |
+
+## Roles and responsibilities for Deliverable 2
+
+|Name/Problem                        |Research about TVM|Problem 1|Problem 2|Problem 3|Problem 4|Documentation|
+|:----------------------------------:|:----------------:|:-------:|:-------:|:-------:|:-------:|:-----------:|
+|Devanshi Piyushkumar Patel          |✔                 |✔       |        |         |✔        |✔             |
+|Hetul Patel                         |✔                 |         |        |         |✔        |✔             |
+|Jay Bharatbhai Patel                |✔                 |         |✔        |         |        |✔             |
+|Juhi Birju Patel                    |✔                 |         |✔        |         |        |✔             |
+|Krishna Patel                       |✔                 |✔         |        |✔         |        |✔             |
+|Mahavir Patel                       |✔                 |         |        |✔         |        |✔             |
