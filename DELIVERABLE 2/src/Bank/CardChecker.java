@@ -4,7 +4,7 @@
 package Bank;
 
 /**
- * @author Mahavir
+ * @author
  *
  */
 public class CardChecker {
