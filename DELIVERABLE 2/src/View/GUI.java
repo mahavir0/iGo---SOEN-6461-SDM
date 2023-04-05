@@ -1,12 +1,14 @@
 /**
  * 
  */
-package TVM;
+package View;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 
 import Bank.CardChecker;
+import Model.Recharge;
+import Model.Ticket;
 
 import java.awt.*;
 import java.awt.GraphicsConfiguration;
@@ -28,11 +30,6 @@ public class GUI implements ActionListener {
 	Recharge recharge = new Recharge();
 	String trip = "";
 	double price;
-
-	
-//	JPanel panel = new JPanel(new GridLayout(ticket.getValue().size(), 1, 10, 10));
-//	JTextField textField = new JTextField();
-//	JFrame frame = new JFrame("iGo - TVM",gc);
 	
 	JPanel panel;
 	JTextField textField;
@@ -45,7 +42,6 @@ public class GUI implements ActionListener {
 		panel = new JPanel(new GridLayout(ticket.getValue().size(), 1, 10, 10));
 		textField = new JTextField();
 		frame = new JFrame("iGo - TVM",gc);
-//		frame.getContentPane().setBackground(Color.y);
 	}
 
 	public void mainPage() {
@@ -75,6 +71,8 @@ public class GUI implements ActionListener {
 		frame.setContentPane(panel);
 		frame.pack();
 		frame.setVisible(true);
+		
+		frame.getContentPane().setBackground(Color.ORANGE);
 	}
 
 	public void rechargeCard() {
@@ -321,14 +319,12 @@ public class GUI implements ActionListener {
 			}
 		} else {
 			panel.removeAll();
-			System.out.println(b);
 			trip = arg0.getActionCommand().split(" -")[0];
 			if(trip.contains("Recharge")) {
 				price = recharge.getRechargeOption().get(trip);
 			}else {
 				price = ticket.getValue().get(trip);
 			}
-			System.out.println(price);
 			paymentMethod(b);
 		}
 	}

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package TVM;
+package Model;
 
 import java.util.HashMap;
 
