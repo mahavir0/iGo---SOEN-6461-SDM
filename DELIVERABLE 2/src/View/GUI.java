@@ -85,6 +85,7 @@ public class GUI implements ActionListener {
 		panel.setBorder(new EmptyBorder(new Insets(45, 90, 40, 90)));
 		
 		//===========================================================================//
+		//Dynamic option from the Recharge
 		
 		JButton[] ja = new JButton[recharge.getRechargeOption().size()];
 		int i=0;
@@ -115,7 +116,10 @@ public class GUI implements ActionListener {
 
 		panel.setBorder(new EmptyBorder(new Insets(120, 160, 120, 160)));
 		panel.setBorder(new EmptyBorder(new Insets(45, 90, 40, 90)));
-
+		
+		//===================================================
+		//Dynamic Ticket Option from the Ticket
+		
 		JButton[] ja = new JButton[ticket.getValue().size()];
 		int i=0;
 		for (Entry<String, Double> entry : ticket.getValue().entrySet()) {
@@ -127,6 +131,8 @@ public class GUI implements ActionListener {
 		    ja[i].addActionListener(this);
 		}
 
+		//====================================================
+		
 		JButton back = new JButton("Back to HomePage");
 		panel.add(back);
 		back.addActionListener(this);
@@ -257,7 +263,7 @@ public class GUI implements ActionListener {
 					JOptionPane.showMessageDialog(frame, "Insufficient, cash", "Warning", JOptionPane.WARNING_MESSAGE);
 				} else if (p > price) {
 					JOptionPane.showMessageDialog(frame, "Payment Successfull.", "Payment Status", JOptionPane.INFORMATION_MESSAGE);
-					JOptionPane.showMessageDialog(frame, "Here is your change : " + (p-price) + "$", "Payment Status", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(frame, "Collect your change : " + (p-price) + "$", "Payment Status", JOptionPane.INFORMATION_MESSAGE);
 					receiptMethod();
 				} else {
 					receiptMethod();
