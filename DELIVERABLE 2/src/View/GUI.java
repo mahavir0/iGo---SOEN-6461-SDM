@@ -49,9 +49,6 @@ public class GUI implements ActionListener {
 		JFrame.setDefaultLookAndFeelDecorated(true);
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.setMinimumSize(new Dimension(500, 300));
-//		frame.getContentPane().setBackground(Color.BLUE);
-//		frame.setBackground(Color.RED);
-//		frame.setBackground( new Color("blue"));
 
 		panel.setBorder(new EmptyBorder(new Insets(60, 80, 60, 80)));
 		panel.setBorder(new EmptyBorder(new Insets(40, 80, 40, 80)));
@@ -86,7 +83,7 @@ public class GUI implements ActionListener {
 		
 		//===========================================================================//
 		//Dynamic option from the Recharge
-		
+
 		JButton[] ja = new JButton[recharge.getRechargeOption().size()];
 		int i=0;
 		for(Entry<String, Double> entry : recharge.getRechargeOption().entrySet()) {
@@ -101,8 +98,6 @@ public class GUI implements ActionListener {
 		panel.add(back);
 		back.addActionListener(this);
 		
-		
-		//===========================================================================//
 		frame.setContentPane(panel);
 		frame.pack();
 		frame.setVisible(true);
