@@ -74,7 +74,7 @@ public class GUI implements ActionListener {
 		frame.pack();
 		frame.setVisible(true);
 		
-		frame.getContentPane().setBackground(Color.ORANGE);
+		frame.getContentPane().setBackground(Color.LIGHT_GRAY);
 	}
 
 	public void rechargeCard() {
