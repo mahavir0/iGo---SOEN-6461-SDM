@@ -9,11 +9,13 @@ import javax.swing.border.EmptyBorder;
 import Bank.CardChecker;
 import Model.Recharge;
 import Model.Ticket;
+import TVM.Admin;
 
 import java.awt.*;
 import java.awt.GraphicsConfiguration;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -64,6 +66,9 @@ public class GUI implements ActionListener {
 		panel.add(j2);
 		j2.addActionListener(this);
 
+		JButton j3 = new JButton("Admin Panel");
+		panel.add(j3);
+		j3.addActionListener(this);
 		
 		frame.setContentPane(panel);
 		frame.pack();
@@ -137,6 +142,33 @@ public class GUI implements ActionListener {
 		frame.setVisible(true);
 	}
 
+	public void adminPanel() {
+//		System.out.println("admin panel");
+		panel.removeAll();
+		
+		JFrame.setDefaultLookAndFeelDecorated(true);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+		panel.setBorder(new EmptyBorder(new Insets(120, 160, 120, 160)));
+		panel.setBorder(new EmptyBorder(new Insets(45, 90, 40, 90)));
+		
+		JButton j1 = new JButton("Change Ticekt Plans");
+		panel.add(j1);
+		j1.addActionListener(this);
+		
+		JButton j2 = new JButton("Change Recharge Plans");
+		panel.add(j2);
+		j2.addActionListener(this);
+		
+		JButton back = new JButton("Back to HomePage");
+		panel.add(back);
+		back.addActionListener(this);
+		
+		frame.setContentPane(panel);
+		frame.pack();
+		frame.setVisible(true);
+	}
+	
 	public void paymentMethod(String a) {
 		textField.setText("");
 		JFrame.setDefaultLookAndFeelDecorated(true);
@@ -147,8 +179,8 @@ public class GUI implements ActionListener {
 
 		JLabel jb = new JLabel("Payment Option :");
 		
-		JButton j1 = new JButton("Submit Card");
-		JButton j2 = new JButton("Submit Cash");
+		JButton j1 = new JButton("Credit/Debit Card");
+		JButton j2 = new JButton("Cash");
 		
 		panel.add(jb);
 		panel.add(j1);
@@ -189,7 +221,7 @@ public class GUI implements ActionListener {
 		panel.add(label1);
 		panel.add(textField);
 
-		JButton submitCash = new JButton("Submitt Cash");
+		JButton submitCash = new JButton("Submit Cash");
 		submitCash.addActionListener(this);
 
 		JButton back = new JButton("Back");
@@ -241,21 +273,59 @@ public class GUI implements ActionListener {
 			buyTicket();
 		} else if(b.equals("Recharge a Card (OPUS)")) {
 			rechargeCard();
-		} else if (b.equals("Submit Card")) {
+		} else if(b.equals("Admin Panel")) {
+			try {
+				String m = JOptionPane.showInputDialog(frame, "Enter your password :");
+				if(m.equals("admin")) {
+					JOptionPane.showMessageDialog(frame, "Authorization is successfull!", "Admin Panel", JOptionPane.INFORMATION_MESSAGE);
+					adminPanel();
+				}else {
+					JOptionPane.showMessageDialog(frame, "Authorization is unsuccessfull!", "Admin Panel", JOptionPane.WARNING_MESSAGE);
+				}
+			}catch(NullPointerException e) {}
+		} else if(b.equals("Change Ticekt Plans") || b.equals("Change Recharge Plans")) {
+			HashMap<String, Double> hm = null;
+			if(b.equals("Change Ticekt Plans")) {
+				hm = ticket.getValue();
+			}else {
+				hm = recharge.getRechargeOption();
+			}
+			Object[] plans = hm.keySet().toArray();
+			String key = (String) JOptionPane.showInputDialog(frame, "Select Plan", b, JOptionPane.QUESTION_MESSAGE, null, plans, plans[0]);
+			if(key!=null) {
+				Double price = null;
+				String p = JOptionPane.showInputDialog(frame, "Enter the price :");
+				boolean proceed = false;
+				try {
+					price = Double.parseDouble(p);
+					proceed = true;
+				} catch(NumberFormatException e) {
+					JOptionPane.showMessageDialog(frame, "Please enter the valid price!", "Warning", JOptionPane.WARNING_MESSAGE);
+				} catch(NullPointerException e) {}
+				if(proceed) {
+					if(Admin.changePlan(hm, key, price)) {
+						JOptionPane.showMessageDialog(frame, "Price has been chagned successfully.", "Change Status", JOptionPane.INFORMATION_MESSAGE);
+					}else {
+						JOptionPane.showMessageDialog(frame, "Price has been not chagned!", "Change Status", JOptionPane.WARNING_MESSAGE);
+					}
+				}
+			}
+			adminPanel();
+		} else if (b.equals("Credit/Debit Card")) {
 			paymentMethodCard(b);
-		} else if (b.equals("Submit Cash")) {
+		} else if (b.equals("Cash")) {
 			paymentMethodCash(b);
 		} else if (b.equals("Back")) {
 			panel.removeAll();
 			panel.revalidate();
 			panel.repaint();
 			buyTicket();
-		} else if (b.equals("Submitt Cash")) {
+		} else if (b.equals("Submit Cash")) {
 
 			try {
 				Double p = Double.parseDouble(textField.getText()); 
 				if (p < price) {
-					JOptionPane.showMessageDialog(frame, "Insufficient, cash", "Warning", JOptionPane.WARNING_MESSAGE);
+					JOptionPane.showMessageDialog(frame, "Insufficient, cash", "Payment Status", JOptionPane.WARNING_MESSAGE);
 				} else if (p > price) {
 					JOptionPane.showMessageDialog(frame, "Payment Successfull.", "Payment Status", JOptionPane.INFORMATION_MESSAGE);
 					JOptionPane.showMessageDialog(frame, "Collect your change : " + (p-price) + "$", "Payment Status", JOptionPane.INFORMATION_MESSAGE);
@@ -264,7 +334,7 @@ public class GUI implements ActionListener {
 					receiptMethod();
 				}
 			}catch(NumberFormatException e) {
-				JOptionPane.showMessageDialog(frame, "Payment Denied. Please Provide a Cash!", "Error", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(frame, "Payment Denied. Please Provide a Cash!", "Payment Status", JOptionPane.ERROR_MESSAGE);
 			}
 
 		} else if (b.equals("Procced Payment")) {
